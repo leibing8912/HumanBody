@@ -7,12 +7,12 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import cn.jianke.humanbody.R;
 import cn.jianke.humanbody.widget.HumanBodyPopupWindow;
@@ -62,6 +62,10 @@ public class HumanBodyActivity extends AppCompatActivity implements View.OnClick
     private HumanBodyPopupWindow mHumanBodyPopupWindow;
     // 点击人体图提示部位名称
     private String posName = "全身";
+    // actionbar容器
+    private RelativeLayout actionbarRly;
+    // 点击人体图时人体图界面与手机屏幕顶部距离
+    private int toTopDistance = 0;
     // 自定义Handler（用于点击人体图的触发事件）
     Handler mHandler = new Handler() {
         public void handleMessage(Message msg) {
@@ -102,6 +106,7 @@ public class HumanBodyActivity extends AppCompatActivity implements View.OnClick
         // 初始化人体图容器
         treatSelfBodyFly = (FrameLayout) findViewById(R.id.fly_treat_self_body);
         // 初始化性别分页控件 add by leibing 2016/10/07
+        actionbarRly = (RelativeLayout) findViewById(R.id.rly_actionbar);
         tabLy = (LinearLayout) findViewById(R.id.ly_tab);
         tabLeftTv = (TextView) findViewById(R.id.tv_tab_left);
         tabRightTv = (TextView) findViewById(R.id.tv_tab_right);
@@ -124,6 +129,13 @@ public class HumanBodyActivity extends AppCompatActivity implements View.OnClick
         tabLeftTv.setOnClickListener(this);
         // 设置更改人体正反面点击事件 add by leibing 2016/10/07
         exchangeIbtn.setOnClickListener(this);
+        // 获取actionbar容器高度(计算点击人体图时人体图界面与手机屏幕顶部距离)
+        actionbarRly.post(new Runnable() {
+            @Override
+            public void run() {
+                toTopDistance += actionbarRly.getMeasuredHeight();
+            }
+        });
     }
 
     public boolean isCanTouch() {
@@ -193,7 +205,7 @@ public class HumanBodyActivity extends AppCompatActivity implements View.OnClick
         setCanTouch(false);
         // 设置点X、Y坐标
         ivPoint.setX(touchScreenPos[0] - 15);
-        ivPoint.setY(touchScreenPos[1] - getStatusBarHeight() - 80);
+        ivPoint.setY(touchScreenPos[1] - getStatusBarHeight() - toTopDistance);
         // 将点添加到父类容器
         if(ivPoint.getParent() == null){
             treatSelfBodyFly.addView(ivPoint);
