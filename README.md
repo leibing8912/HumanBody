@@ -5,5 +5,7 @@
 * 人体图切分成部位片，通过xml布局方式组合起来
 * Fragment碎片方式实现替换人体布局
 * AnimationDrawable实现点击位置动画播放
+
 ### 效果图
+
 ![](https://dn-mhke0kuv.qbox.me/db5c67a632e7d51f401c.gif)
