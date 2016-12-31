@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <!-- 左上占位 -->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/women_back_1"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!-- 头部 -->
+            <ImageView
+                android:id="@+id/iv_women_back_head"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:src="@drawable/women_back_2"/>
+            <!-- 颈部 -->
+            <ImageView
+                android:id="@+id/iv_women_back_neck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:src="@drawable/women_back_4"/>
+        </LinearLayout>
+        <!-- 右上占位 -->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/women_back_3"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <!-- 左上手臂 -->
+        <ImageView
+            android:id="@+id/iv_women_back_arm_left_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/women_back_5"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!-- 背部(上) -->
+            <ImageView
+                android:id="@+id/iv_women_back_backside_up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:src="@drawable/women_back_6"/>
+            <!-- 背部(下) -->
+            <ImageView
+                android:id="@+id/iv_women_back_backside_down"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:src="@drawable/women_back_8"/>
+        </LinearLayout>
+        <!-- 右上手臂 -->
+        <ImageView
+            android:id="@+id/iv_women_back_arm_right_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/women_back_7"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <!-- 左中手臂 -->
+        <ImageView
+            android:id="@+id/iv_women_back_arm_left_middle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/women_back_9"/>
+        <!-- 腰部(上) -->
+        <ImageView
+            android:id="@+id/iv_women_back_waist_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/women_back_10"/>
+        <!-- 右中手臂 -->
+        <ImageView
+            android:id="@+id/iv_women_back_arm_right_middle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/women_back_11"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <!-- 左下手臂 -->
+        <ImageView
+            android:id="@+id/iv_women_back_arm_left_down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/women_back_12"/>
+        <!-- 腰部(下) -->
+        <ImageView
+            android:id="@+id/iv_women_back_waist_down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/women_back_13"/>
+        <!-- 右下手臂 -->
+        <ImageView
+            android:id="@+id/iv_women_back_arm_right_down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/women_back_14"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <!-- 左手 -->
+        <ImageView
+            android:id="@+id/iv_women_back_hand_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/women_back_15"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!-- 臀部 -->
+            <ImageView
+                android:id="@+id/iv_women_back_hip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:src="@drawable/women_back_16"/>
+            <!-- 双腿 -->
+            <ImageView
+                android:id="@+id/iv_women_back_legs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:src="@drawable/women_back_18"/>
+            <!-- 双脚 -->
+            <ImageView
+                android:id="@+id/iv_women_back_foots"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:src="@drawable/women_back_19"/>
+        </LinearLayout>
+        <!-- 右手 -->
+        <ImageView
+            android:id="@+id/iv_women_back_hand_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/women_back_17"/>
+    </LinearLayout>
+</LinearLayout>

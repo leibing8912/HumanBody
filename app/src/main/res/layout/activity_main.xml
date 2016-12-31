@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="cn.jianke.humanbody.module.HumanBodyActivity">
+    <!-- actionbar -->
+    <include layout="@layout/include_titlebar_tab" />
+    <!-- 分割线 -->
+    <include layout="@layout/include_division_light_gray" />
+    <FrameLayout
+        android:id="@+id/fly_treat_self_body"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:background="@drawable/bg_body">
+        <LinearLayout
+            android:id="@+id/ly_fragment_area"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical" >
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="vertical"
+            android:gravity="right"
+            android:paddingRight="24dp">
+            <cn.jianke.humanbody.widget.IosButton
+                android:id="@+id/ibtn_exchange"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="@drawable/exchange_new"/>
+            <TextView
+                android:id="@+id/tv_reverse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="正面"
+                android:paddingTop="8dp"
+                android:textSize="16sp"
+                android:textColor="@color/symptoms_self_diagnostics_tab_dark_text" />
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>
