@@ -60,6 +60,8 @@ public class HumanBodyActivity extends AppCompatActivity implements View.OnClick
     private HumanBodyFragment fragmentHumanBody;
     // 人体图部位提示框
     private HumanBodyPopupWindow mHumanBodyPopupWindow;
+    // 点击人体图提示部位名称
+    private String posName = "全身";
     // 自定义Handler（用于点击人体图的触发事件）
     Handler mHandler = new Handler() {
         public void handleMessage(Message msg) {
@@ -197,7 +199,6 @@ public class HumanBodyActivity extends AppCompatActivity implements View.OnClick
             treatSelfBodyFly.addView(ivPoint);
         }
         // 人体部位提示框
-        String posName = "全身";
         // 1：头部；2：颈部；3：胸部；4：腹部；5：男性勾股；6：女性盆骨；7：上肢；8：下肢；
         // 9：下肢（本应足部，但数据没分出来）；10：背部；11：腰部；12：臀部；
         // 13：上肢（本应手指，但数据没分出来）
@@ -240,9 +241,14 @@ public class HumanBodyActivity extends AppCompatActivity implements View.OnClick
             default:
                 break;
         }
-        mHumanBodyPopupWindow = new HumanBodyPopupWindow(HumanBodyActivity.this, posName);
-        mHumanBodyPopupWindow.showAsDropDown(ivPoint,-80,-150);
-        mHumanBodyPopupWindow.delayDismissDialog(mHumanBodyPopupWindow, 0);
+        treatSelfBodyFly.post(new Runnable() {
+            @Override
+            public void run() {
+                mHumanBodyPopupWindow = new HumanBodyPopupWindow(HumanBodyActivity.this, posName);
+                mHumanBodyPopupWindow.showAsDropDown(ivPoint,-80,-150);
+                mHumanBodyPopupWindow.delayDismissDialog(mHumanBodyPopupWindow, 0);
+            }
+        });
 
         // 执行点动画
         pointAnim = (AnimationDrawable) ivPoint.getBackground();
