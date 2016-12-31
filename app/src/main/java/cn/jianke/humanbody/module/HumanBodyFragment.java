@@ -150,7 +150,7 @@ public class HumanBodyFragment extends Fragment implements OnClickListener,OnTou
 	// 9：下肢（本应足部，但数据没分出来）；10：背部；11：腰部；12：臀部；
 	// 13：上肢（本应手指，但数据没分出来）
 	private int partId = 1;
-
+	
 	/**
 	 * 可以在创建时传参数的fragment
 	 * @author leibing

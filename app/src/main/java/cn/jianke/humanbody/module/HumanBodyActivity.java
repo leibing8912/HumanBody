@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -14,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import cn.jianke.humanbody.R;
+import cn.jianke.humanbody.widget.HumanBodyPopupWindow;
 import cn.jianke.humanbody.widget.IosButton;
 
 /**
@@ -56,6 +58,8 @@ public class HumanBodyActivity extends AppCompatActivity implements View.OnClick
     private boolean canTouch = true;
     // 人体图页面
     private HumanBodyFragment fragmentHumanBody;
+    // 人体图部位提示框
+    private HumanBodyPopupWindow mHumanBodyPopupWindow;
     // 自定义Handler（用于点击人体图的触发事件）
     Handler mHandler = new Handler() {
         public void handleMessage(Message msg) {
@@ -192,6 +196,54 @@ public class HumanBodyActivity extends AppCompatActivity implements View.OnClick
         if(ivPoint.getParent() == null){
             treatSelfBodyFly.addView(ivPoint);
         }
+        // 人体部位提示框
+        String posName = "全身";
+        // 1：头部；2：颈部；3：胸部；4：腹部；5：男性勾股；6：女性盆骨；7：上肢；8：下肢；
+        // 9：下肢（本应足部，但数据没分出来）；10：背部；11：腰部；12：臀部；
+        // 13：上肢（本应手指，但数据没分出来）
+        switch (clickPos){
+            case 1:
+                posName = "头部";
+                break;
+            case 2:
+                posName = "颈部";
+                break;
+            case 3:
+                posName = "胸部";
+                break;
+            case 4:
+                posName = "腹部";
+                break;
+            case 5:
+                posName = "男性勾股";
+                break;
+            case 6:
+                posName = "女性盆骨";
+                break;
+            case 7:
+            case 13:
+                posName = "上肢";
+                break;
+            case 8:
+            case 9:
+                posName = "下肢";
+                break;
+            case 10:
+                posName = "背部";
+                break;
+            case 11:
+                posName = "腰部";
+                break;
+            case 12:
+                posName = "臀部";
+                break;
+            default:
+                break;
+        }
+        mHumanBodyPopupWindow = new HumanBodyPopupWindow(HumanBodyActivity.this, posName);
+        mHumanBodyPopupWindow.showAsDropDown(ivPoint,-80,-150);
+        mHumanBodyPopupWindow.delayDismissDialog(mHumanBodyPopupWindow, 0);
+
         // 执行点动画
         pointAnim = (AnimationDrawable) ivPoint.getBackground();
         pointAnim.start();
