@@ -281,7 +281,7 @@ public class HumanBodyActivity extends AppCompatActivity implements View.OnClick
         msg.setData(bundle);
         mHandler.sendMessageDelayed(msg, duration);
     }
-
+    
     /**
      * 获取通知栏的高度
      * @author leibing
